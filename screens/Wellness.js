@@ -1,26 +1,20 @@
 // Wellness.js
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import InnerNavMenu from "../components/InnerNavMenu";
+import MainArea from "../components/MainArea";
 
 const Wellness = () => {
   const navOptions = [
     "Daily Check-In",
     "Adjusting to Missionary Life",
     "Needing Help",
+    "Example",
   ];
-  const handlePressLink = (link) => {
-    // Handle link press (you can navigate or perform other actions)
-    console.log(`Pressed: ${link}`);
-  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Missionary Wellness</Text>
-      <InnerNavMenu
-        links={navOptions}
-        onPressLink={handlePressLink}
-      ></InnerNavMenu>
+      <MainArea links={navOptions} />
     </View>
   );
 };

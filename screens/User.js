@@ -1,7 +1,7 @@
 // User.js
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import InnerNavMenu from "../components/InnerNavMenu";
+import MainArea from "../components/MainArea";
 
 const User = () => {
   const navOptions = ["My Profile", "My Contacts", "Messages"];
@@ -13,10 +13,7 @@ const User = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>User</Text>
-      <InnerNavMenu
-        links={navOptions}
-        onPressLink={handlePressLink}
-      ></InnerNavMenu>
+      <MainArea links={navOptions} />
     </View>
   );
 };

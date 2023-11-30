@@ -1,7 +1,7 @@
 // More.js
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import InnerNavMenu from "../components/InnerNavMenu";
+import MainArea from "../components/MainArea";
 
 const More = () => {
   const navOptions = ["Settings", "Help"];
@@ -13,10 +13,7 @@ const More = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>More</Text>
-      <InnerNavMenu
-        links={navOptions}
-        onPressLink={handlePressLink}
-      ></InnerNavMenu>
+      <MainArea links={navOptions} />
     </View>
   );
 };

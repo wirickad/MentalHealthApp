@@ -1,14 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import MainArea from "../components/MainArea";
 
-const Emergency = () => {
-  const navOptions = ["For Me", "For My Companion", "Example"];
-
+const DailyCheckIn = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Get Help</Text>
-      <MainArea links={navOptions} />
+      <Text style={styles.text}>This is the daily check-in</Text>
     </View>
   );
 };
@@ -24,4 +20,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Emergency;
+export default DailyCheckIn;
