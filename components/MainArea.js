@@ -3,6 +3,7 @@ import InnerNavMenu from "../components/InnerNavMenu";
 import DailyCheckIn from "./DailyCheckIn";
 import ExampleComponent from "./ExampleComponent";
 import ReturnButton from "./ReturnButton";
+import NeedingHelp from "./NeedingHelp";
 
 const MainArea = ({ currentLink, links }) => {
   const [selectedLink, setSelectedLink] = useState(null);
@@ -25,6 +26,13 @@ const MainArea = ({ currentLink, links }) => {
         return (
           <React.Fragment>
             <DailyCheckIn />
+            <ReturnButton onPress={handleReturn} />
+          </React.Fragment>
+        );
+      case "Needing Help":
+        return (
+          <React.Fragment>
+            <NeedingHelp />
             <ReturnButton onPress={handleReturn} />
           </React.Fragment>
         );
