@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 const Wellness = () => {
   const navOptions = [
@@ -24,19 +24,21 @@ const Wellness = () => {
   ];
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Missionary Wellness</Text>
-      {navOptions.map(option => (
-        <TouchableOpacity
-          key={option.key}
-          style={styles.option}
-          onPress={option.onPress}
-        >
-          <Image source={option.image} style={styles.image} />
-          <Text style={styles.optionText}>{option.title}</Text>
-        </TouchableOpacity>
-      ))}
-    </View>
+    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+      <View style={styles.container}>
+        <Text style={styles.text}>Missionary Wellness</Text>
+        {navOptions.map(option => (
+          <TouchableOpacity
+            key={option.key}
+            style={styles.option}
+            onPress={option.onPress}
+          >
+            <Image source={option.image} style={styles.image} />
+            <Text style={styles.optionText}>{option.title}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+    </ScrollView>
   );
 };
 
@@ -69,8 +71,8 @@ const styles = StyleSheet.create({
     marginTop: 10, // Space between image and text
   },
   image: {
-    width: 100, // Example width
-    height: 100, // Example height
+    width: 180, // Example width
+    height: 180, // Example height
     resizeMode: 'contain', // Keep image aspect ratio
   },
   // Add more styles as needed

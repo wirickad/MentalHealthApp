@@ -7,8 +7,11 @@ import Emergency from "./screens/Emergency";
 import User from "./screens/User";
 import More from "./screens/More";
 import ForMe from './screens/Emergency/ForMe'; 
+import Settings from './screens/More/Settings';
+import NewContact from "./screens/More/NewContact";
 //import ForMyCompanion from './screens/Emergency/ForMyCompanion';
 
+// Tab navigator
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
@@ -55,23 +58,38 @@ const AppNavigator = () => {
       <Tab.Screen name="Wellness" component={Wellness} />
       <Tab.Screen name="Help" component={EmergencyStackNavigator}  />
       <Tab.Screen name="User" component={User} />
-      <Tab.Screen name="More" component={More} />
+      <Tab.Screen name="More" component={MoreStackNavigator} />
     </Tab.Navigator>
   );
 };
 
+// Emergency Navigator
 const Stack = createStackNavigator();
 
 const EmergencyStackNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Emergency">
-      <Stack.Screen name="Emergency" component={Emergency} />
+      <Stack.Screen name="Help" component={Emergency} />
       <Stack.Screen name="ForMe" component={ForMe} />
       {/* <Stack.Screen name="ForMyCompanion" component={ForMyCompanion} /> */}
     </Stack.Navigator>
   );
 };
 
+// More navigator
+const MoreStack = createStackNavigator();
+
+const MoreStackNavigator = () => {
+  return (
+    <MoreStack.Navigator>
+      <MoreStack.Screen name="More" component={More} />
+      <MoreStack.Screen name="Settings" component={Settings} />
+      <MoreStack.Screen name="NewContact" component={NewContact} />
+    </MoreStack.Navigator>
+  );
+};
 
 
-export {AppNavigator, EmergencyStackNavigator} ;
+
+
+export {AppNavigator, EmergencyStackNavigator, MoreStackNavigator} ;

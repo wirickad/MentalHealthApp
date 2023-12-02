@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 const User = () => {
   const navOptions = [
@@ -24,19 +24,21 @@ const User = () => {
   ];
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>User</Text>
-      {navOptions.map(option => (
-        <TouchableOpacity
-          key={option.key}
-          style={styles.option}
-          onPress={() => console.log(`Pressed: ${option.title}`)} // Replace with actual navigation or action
-        >
-          <Image source={option.image} style={styles.image} />
-          <Text style={styles.optionText}>{option.title}</Text>
-        </TouchableOpacity>
-      ))}
-    </View>
+    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+      <View style={styles.container}>
+        <Text style={styles.text}>User</Text>
+        {navOptions.map(option => (
+          <TouchableOpacity
+            key={option.key}
+            style={styles.option}
+            onPress={() => console.log(`Pressed: ${option.title}`)} // Replace with actual navigation or action
+          >
+            <Image source={option.image} style={styles.image} />
+            <Text style={styles.optionText}>{option.title}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+    </ScrollView>
   );
 };
 
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start', // Align to the top
     alignItems: 'center',
-    paddingTop: 50, // Add padding at the top
+    paddingTop: 20, // Add padding at the top
     backgroundColor: '#797a7e', // light yellow background
   },
   text: {
@@ -67,8 +69,8 @@ const styles = StyleSheet.create({
     marginTop: 10, // Space between image and text
   },
   image: {
-    width: 100, // Example width
-    height: 100, // Example height
+    width: 180, // Example width
+    height: 180, // Example height
     resizeMode: 'contain', // Keep image aspect ratio
   },
   // Add more styles as needed
