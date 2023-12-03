@@ -13,7 +13,6 @@ const Wellness = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Missionary Wellness</Text>
       <MainArea links={navOptions} />
     </View>
   );
