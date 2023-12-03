@@ -4,6 +4,7 @@ import DailyCheckIn from "./DailyCheckIn";
 import ExampleComponent from "./ExampleComponent";
 import ReturnButton from "./ReturnButton";
 import NeedingHelp from "./NeedingHelp";
+import PhysicalQuestions from "./PhysicalQuestions";
 
 const MainArea = ({ currentLink, links }) => {
   const [selectedLink, setSelectedLink] = useState(null);
@@ -33,6 +34,13 @@ const MainArea = ({ currentLink, links }) => {
         return (
           <React.Fragment>
             <NeedingHelp />
+            <ReturnButton onPress={handleReturn} />
+          </React.Fragment>
+        );
+      case "Physical Questions":
+        return (
+          <React.Fragment>
+            <PhysicalQuestions />
             <ReturnButton onPress={handleReturn} />
           </React.Fragment>
         );
