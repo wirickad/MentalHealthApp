@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import InnerNavMenu from "../components/InnerNavMenu";
 import DailyCheckIn from "./DailyCheckIn";
-import ExampleComponent from "./ExampleComponent";
 import ReturnButton from "./ReturnButton";
 import NeedingHelp from "./NeedingHelp";
+import AdjustingLife from "./AdjustingMissionaryLife";
 
 const MainArea = ({ currentLink, links }) => {
   const [selectedLink, setSelectedLink] = useState(null);
@@ -36,10 +36,10 @@ const MainArea = ({ currentLink, links }) => {
             <ReturnButton onPress={handleReturn} />
           </React.Fragment>
         );
-      case "Example":
+      case "Adjusting to Missionary Life":
         return (
           <React.Fragment>
-            <ExampleComponent />
+            <AdjustingLife />
             <ReturnButton onPress={handleReturn} />
           </React.Fragment>
         );
