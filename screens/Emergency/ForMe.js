@@ -8,24 +8,24 @@ import {
   Image,
 } from "react-native";
 
-const User = () => {
-  const navOptions = [
+const ForMe = ({ navigation }) => {
+  const options = [
     {
-      key: "myProfile",
-      title: "My Profile",
-      image: require("../image/profile.png"),
+      key: "emergency",
+      title: "Emergency",
+      image: require("../../image/warning.png"),
       // onPress: () => {/* Handle navigation or action */}
     },
     {
-      key: "myContacts",
-      title: "My Contacts",
-      image: require("../image/contacts.png"),
+      key: "feelingBlue",
+      title: "Feeling Blue",
+      image: require("../../image/blue.png"),
       // onPress: () => {/* Handle navigation or action */}
     },
     {
-      key: "messages",
-      title: "Messages",
-      image: require("../image/messages.png"),
+      key: "talkToTherapist",
+      title: "Talk to a Therapist",
+      image: require("../../image/therapist.png"),
       // onPress: () => {/* Handle navigation or action */}
     },
   ];
@@ -33,12 +33,12 @@ const User = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Text style={styles.text}>User</Text>
-        {navOptions.map((option) => (
+        <Text style={styles.header}>For Me</Text>
+        {options.map((option) => (
           <TouchableOpacity
             key={option.key}
             style={styles.option}
-            onPress={() => console.log(`Pressed: ${option.title}`)} // Replace with actual navigation or action
+            onPress={option.onPress}
           >
             <Image source={option.image} style={styles.image} />
             <Text style={styles.optionText}>{option.title}</Text>
@@ -55,10 +55,10 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start", // Align to the top
     alignItems: "center",
     paddingTop: 20, // Add padding at the top
-    backgroundColor: "#797a7e", // light yellow background
+    backgroundColor: "#759CD3",
   },
-  text: {
-    fontSize: 20,
+  header: {
+    fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
   },
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
   // Add more styles as needed
 });
 
-export default User;
+export default ForMe;
