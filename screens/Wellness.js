@@ -28,6 +28,7 @@ const Wellness = () => {
       key: "needingHelp",
       title: "Needing Help",
       image: require("../image/help.png"), // Replace with your image path
+      natigateTo: "NeedingHelp",
       // onPress: () => {/* Handle navigation or action */}
     },
   ];
