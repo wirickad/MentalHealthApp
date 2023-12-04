@@ -1,14 +1,16 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from "@react-navigation/stack";
 import { Ionicons, MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import Wellness from "./screens/Wellness";
 import Emergency from "./screens/Emergency";
 import User from "./screens/User";
 import More from "./screens/More";
-import ForMe from './screens/Emergency/ForMe'; 
-import Settings from './screens/More/Settings';
+import ForMe from "./screens/Emergency/ForMe";
+import Settings from "./screens/More/Settings";
 import NewContact from "./screens/More/NewContact";
+import AdjustingLife from "./screens/Wellness/AdjustingLife";
+import DailyCheckIn from "./screens/Wellness/DailyCheckIn";
 //import ForMyCompanion from './screens/Emergency/ForMyCompanion';
 
 // Tab navigator
@@ -55,8 +57,8 @@ const AppNavigator = () => {
         },
       })}
     >
-      <Tab.Screen name="Wellness" component={Wellness} />
-      <Tab.Screen name="Help" component={EmergencyStackNavigator}  />
+      <Tab.Screen name="Wellness" component={WellnessStackNavigator} />
+      <Tab.Screen name="Help" component={EmergencyStackNavigator} />
       <Tab.Screen name="User" component={User} />
       <Tab.Screen name="More" component={MoreStackNavigator} />
     </Tab.Navigator>
@@ -89,7 +91,21 @@ const MoreStackNavigator = () => {
   );
 };
 
+const WellnessStack = createStackNavigator();
 
+const WellnessStackNavigator = () => {
+  return (
+    <WellnessStack.Navigator>
+      <WellnessStack.Screen name="Wellness" component={Wellness} />
+      <Stack.Screen name="AdjustingLife" component={AdjustingLife} />
+      <Stack.Screen name="DailyCheckIn" component={DailyCheckIn} />
+    </WellnessStack.Navigator>
+  );
+};
 
-
-export {AppNavigator, EmergencyStackNavigator, MoreStackNavigator} ;
+export {
+  AppNavigator,
+  EmergencyStackNavigator,
+  MoreStackNavigator,
+  WellnessStackNavigator,
+};

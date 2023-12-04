@@ -1,24 +1,31 @@
-import React from 'react';
-import { ScrollView, View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import React from "react";
+import {
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 
 const User = () => {
   const navOptions = [
     {
-      key: 'myProfile',
-      title: 'My Profile',
-      image: require('/Users/kizy/Desktop/Project/MentalHealthApp/image/profile.png'), 
+      key: "myProfile",
+      title: "My Profile",
+      image: require("../image/profile.png"),
       // onPress: () => {/* Handle navigation or action */}
     },
     {
-      key: 'myContacts',
-      title: 'My Contacts',
-      image: require('/Users/kizy/Desktop/Project/MentalHealthApp/image/contacts.png'), 
+      key: "myContacts",
+      title: "My Contacts",
+      image: require("../image/contacts.png"),
       // onPress: () => {/* Handle navigation or action */}
     },
     {
-      key: 'messages',
-      title: 'Messages',
-      image: require('/Users/kizy/Desktop/Project/MentalHealthApp/image/messages.png'), 
+      key: "messages",
+      title: "Messages",
+      image: require("../image/messages.png"),
       // onPress: () => {/* Handle navigation or action */}
     },
   ];
@@ -27,7 +34,7 @@ const User = () => {
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
         <Text style={styles.text}>User</Text>
-        {navOptions.map(option => (
+        {navOptions.map((option) => (
           <TouchableOpacity
             key={option.key}
             style={styles.option}
@@ -45,24 +52,24 @@ const User = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start', // Align to the top
-    alignItems: 'center',
+    justifyContent: "flex-start", // Align to the top
+    alignItems: "center",
     paddingTop: 20, // Add padding at the top
-    backgroundColor: '#797a7e', // light yellow background
+    backgroundColor: "#797a7e", // light yellow background
   },
   text: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
   },
   option: {
-    width: '80%', // Set width
+    width: "80%", // Set width
     padding: 20,
     borderRadius: 10, // Rounded corners
     marginBottom: 10,
-    alignItems: 'center', // Center content
-    justifyContent: 'center', // Center content
-    backgroundColor: '#EFEFEF', // Example background color
+    alignItems: "center", // Center content
+    justifyContent: "center", // Center content
+    backgroundColor: "#EFEFEF", // Example background color
   },
   optionText: {
     fontSize: 18,
@@ -71,7 +78,7 @@ const styles = StyleSheet.create({
   image: {
     width: 180, // Example width
     height: 180, // Example height
-    resizeMode: 'contain', // Keep image aspect ratio
+    resizeMode: "contain", // Keep image aspect ratio
   },
   // Add more styles as needed
 });

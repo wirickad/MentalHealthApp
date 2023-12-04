@@ -1,23 +1,30 @@
 import React from "react";
-import { ScrollView, View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import {
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 
 const Emergency = () => {
   const navigation = useNavigation(); // Get the navigation object
   const navOptions = [
     {
-      key: 'forMe',
+      key: "forMe",
       text: "For Me",
-      backgroundColor: "#EFEFEF", 
-      image: require('/Users/kizy/Desktop/Project/MentalHealthApp/image/sister.png'),
-      navigateTo: 'ForMe'
+      backgroundColor: "#EFEFEF",
+      image: require("../image/sister.png"),
+      navigateTo: "ForMe",
     },
     {
-      key: 'forCompanion',
+      key: "forCompanion",
       text: "For My Companion",
-      backgroundColor: "#EFEFEF", 
-      image: require('/Users/kizy/Desktop/Project/MentalHealthApp/image/elders.png'), 
-      navigateTo: 'ForMyCompanion'
+      backgroundColor: "#EFEFEF",
+      image: require("../image/elders.png"),
+      navigateTo: "ForMyCompanion",
     },
     // Example option removed as per your request
   ];
@@ -31,7 +38,7 @@ const Emergency = () => {
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
         <Text style={styles.header}>Get Help</Text>
-        {navOptions.map(option => (
+        {navOptions.map((option) => (
           <TouchableOpacity
             key={option.key}
             style={[styles.option, { backgroundColor: option.backgroundColor }]}
@@ -52,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start", // Align to the top
     alignItems: "center",
     paddingTop: 20, // Add padding at the top
-    backgroundColor: '#BFE27F',
+    backgroundColor: "#BFE27F",
   },
   header: {
     fontSize: 24,
@@ -61,13 +68,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   option: {
-    width: '80%', // Set width
+    width: "80%", // Set width
     padding: 20,
     borderRadius: 10, // Rounded corners
     marginBottom: 10,
-    alignItems: 'center', // Center content
-    justifyContent: 'center', // Center content
-    
+    alignItems: "center", // Center content
+    justifyContent: "center", // Center content
   },
   optionText: {
     fontSize: 18,
@@ -77,7 +83,7 @@ const styles = StyleSheet.create({
   image: {
     width: 180, // Example width
     height: 180, // Example height
-    resizeMode: 'contain', // Keep image aspect ratio
+    resizeMode: "contain", // Keep image aspect ratio
   },
 });
 

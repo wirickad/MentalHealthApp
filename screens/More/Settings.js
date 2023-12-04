@@ -1,17 +1,17 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 
 const Settings = () => {
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
   const navOptions = [
     {
-      key: 'newContact',
+      key: "newContact",
       text: "Emergency Contact",
-      backgroundColor: "#EFEFEF", 
-      title: 'Emergency Contact',
-      image: require('/Users/kizy/Desktop/Project/MentalHealthApp/image/emergencycontact.png'), 
-      navigateTo: 'NewContact'
+      backgroundColor: "#EFEFEF",
+      title: "Emergency Contact",
+      image: require("../..//image/emergencycontact.png"),
+      navigateTo: "NewContact",
     },
   ];
 
@@ -23,7 +23,7 @@ const Settings = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Settings</Text>
-      {navOptions.map(option => (
+      {navOptions.map((option) => (
         <TouchableOpacity
           key={option.key}
           style={[styles.option, { backgroundColor: option.backgroundColor }]}
@@ -40,24 +40,24 @@ const Settings = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start', // Align to the top
-    alignItems: 'center',
+    justifyContent: "flex-start", // Align to the top
+    alignItems: "center",
     paddingTop: 20, // Add padding at the top
-    backgroundColor: '#DD571C',
+    backgroundColor: "#DD571C",
   },
   text: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
   },
   option: {
-    width: '80%', // Set width
+    width: "80%", // Set width
     padding: 20,
     borderRadius: 10, // Rounded corners
     marginBottom: 10,
-    alignItems: 'center', // Center content
-    justifyContent: 'center', // Center content
-    backgroundColor: '#EFEFEF', // Background color
+    alignItems: "center", // Center content
+    justifyContent: "center", // Center content
+    backgroundColor: "#EFEFEF", // Background color
   },
   optionText: {
     fontSize: 18,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   image: {
     width: 180, // Example width
     height: 180, // Example height
-    resizeMode: 'contain', // Keep image aspect ratio
+    resizeMode: "contain", // Keep image aspect ratio
   },
 });
 
