@@ -1,17 +1,9 @@
 import React from "react";
-import {
-  TouchableOpacity,
-  View,
-  Text,
-  StyleSheet,
-  Linking,
-} from "react-native";
+import { TouchableOpacity, View, Text, StyleSheet, Linking } from "react-native";
 
 const AdjustingLife = () => {
   const handleViewResource = () => {
-    // Replace 'twitter://' with the app scheme of the app you want to open
-    const appScheme =
-      "https://www.churchofjesuschrist.org/study/manual/resource-booklet-adjusting-to-missionary-life?lang=eng";
+    const appScheme = "https://www.churchofjesuschrist.org/study/manual/resource-booklet-adjusting-to-missionary-life?lang=eng";
 
     // Check if the app is installed before trying to open it
     Linking.canOpenURL(appScheme).then((supported) => {
@@ -28,30 +20,36 @@ const AdjustingLife = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Adjusting to Missionary Life:</Text>
       <Text style={styles.subText}>
-        Life as a missionary is not easy. So, the Church has provided "Adjusting
-        to Missionary Life" as a resource. What's included in the Gospel Library
-        resource?
+        Life as a missionary is not easy. The Church has provided 
+        "Adjusting to Missionary Life" as a resource. What's included in the Gospel Library resource?
       </Text>
-      <View style={styles.bulletPoints}>
-        <Text style={styles.bullet}>{"\u2022"}</Text>
-        <Text style={styles.subText}>Physical Resources</Text>
+
+      <View style={styles.row}>
+        <View style={styles.bulletPoints}>
+          <Text style={styles.bullet}>{"\u2022"}</Text>
+          <Text style={styles.subText}>Physical Resources</Text>
+        </View>
+        <View style={styles.bulletPoints}>
+          <Text style={styles.bullet}>{"\u2022"}</Text>
+          <Text style={styles.subText}>Emotional Resources</Text>
+        </View>
       </View>
-      <View style={styles.bulletPoints}>
-        <Text style={styles.bullet}>{"\u2022"}</Text>
-        <Text style={styles.subText}>Emotional Resources</Text>
+
+      <View style={styles.row}>
+        <View style={styles.bulletPoints}>
+          <Text style={styles.bullet}>{"\u2022"}</Text>
+          <Text style={styles.subText}>Spiritual Resources</Text>
+        </View>
+        <View style={styles.bulletPoints}>
+          <Text style={styles.bullet}>{"\u2022"}</Text>
+          <Text style={styles.subText}>Intellectual Resources</Text>
+        </View>
+        <View style={styles.bulletPoints}>
+          <Text style={styles.bullet}>{"\u2022"}</Text>
+          <Text style={styles.subText}>Social Resources</Text>
+        </View>
       </View>
-      <View style={styles.bulletPoints}>
-        <Text style={styles.bullet}>{"\u2022"}</Text>
-        <Text style={styles.subText}>Spiritual Resources</Text>
-      </View>
-      <View style={styles.bulletPoints}>
-        <Text style={styles.bullet}>{"\u2022"}</Text>
-        <Text style={styles.subText}>Intellectual Resources</Text>
-      </View>
-      <View style={styles.bulletPoints}>
-        <Text style={styles.bullet}>{"\u2022"}</Text>
-        <Text style={styles.subText}>Social Resources</Text>
-      </View>
+
       <TouchableOpacity onPress={handleViewResource} style={styles.button}>
         <Text style={styles.buttonText}>View the Resource</Text>
       </TouchableOpacity>
@@ -75,13 +73,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "gray", // Adjust the color as needed
     textAlign: "center", // Center the text
-    marginBottom: 8,
+    marginBottom: 16,
     maxWidth: 600, // Adjust the maximum width as needed
   },
   bulletPoints: {
     flexDirection: "row",
     alignItems: "center",
     marginLeft: 16, // Adjust the margin as needed
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: 8,
   },
   bullet: {
     fontSize: 16,

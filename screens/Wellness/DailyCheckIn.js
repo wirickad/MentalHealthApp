@@ -123,7 +123,7 @@ const DailyCheckIn = () => {
           setOpenCommunicationRating
         )}
         {renderRadioButtons(
-          "I am not struggling with feelings of anxiety/depression",
+          "I am struggling with feelings of anxiety/depression",
           anxietyDepressionRating,
           setAnxietyDepressionRating
         )}
