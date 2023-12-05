@@ -19,43 +19,43 @@ const NeedingHelp = () => {
       key: "generalConcerns",
       title: "General Concerns",
       // image: require("../../image/dailychecking.png"),
-      navigateTo: "General",
+      navigateTo: "GeneralConcerns",
     },
     {
       key: "physicalConcerns",
       title: "Physical Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Physical",
+      navigateTo: "PhysicalConcerns",
     },
     {
       key: "emotionalConcerns",
       title: "Emotional Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Emotional",
+      navigateTo: "EmotionalConcerns",
     },
     {
       key: "socialConcerns",
       title: "Social Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Social",
+      navigateTo: "SocialConcerns",
     },
     {
       key: "intellectualConcerns",
       title: "Intellectual Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Intellectual",
+      navigateTo: "IntellectualConcerns",
     },
     {
       key: "spiritualConcerns",
       title: "Spiritual Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Spiritual",
+      navigateTo: "SpiritualConcerns",
     },
     {
       key: "emergencyConcerns",
       title: "Emergency Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Emergency",
+      navigateTo: "EmergencyConcerns",
     },
   ];
 
