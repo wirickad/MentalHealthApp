@@ -11,6 +11,7 @@ import Settings from "./screens/More/Settings";
 import NewContact from "./screens/More/NewContact";
 import AdjustingLife from "./screens/Wellness/AdjustingLife";
 import DailyCheckIn from "./screens/Wellness/DailyCheckIn";
+import NeedingHelp from "./screens/Wellness/NeedingHelp";
 //import ForMyCompanion from './screens/Emergency/ForMyCompanion';
 
 // Tab navigator
@@ -99,6 +100,7 @@ const WellnessStackNavigator = () => {
       <WellnessStack.Screen name="Wellness" component={Wellness} />
       <Stack.Screen name="AdjustingLife" component={AdjustingLife} />
       <Stack.Screen name="DailyCheckIn" component={DailyCheckIn} />
+      <Stack.Screen name="NeedingHelp" component={NeedingHelp} />
     </WellnessStack.Navigator>
   );
 };
