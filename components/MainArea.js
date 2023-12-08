@@ -1,4 +1,5 @@
 
+
 // import React, { useState } from "react";
 // import InnerNavMenu from "../components/InnerNavMenu";
 // import DailyCheckIn from "./DailyCheckIn";
@@ -13,9 +14,6 @@
 // import NeedingHelp from "./NeedingHelp";
 // import AdjustingLife from "./AdjustingMissionaryLife";
 
-
-// const MainArea = ({ currentLink, links }) => {
-//   const [selectedLink, setSelectedLink] = useState(null);
 
 //   const handlePressLink = (link) => {
 //     // Handle link press (you can navigate or perform other actions)

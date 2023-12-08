@@ -1,37 +1,64 @@
-import React from "react";
+// NeedingHelp.js
+import React, { useState, useEffect } from "react";
 import {
   ScrollView,
+  Alert,
+  TouchableOpacity,
   View,
   Text,
   StyleSheet,
-  TouchableOpacity,
-  Image,
+  Linking,
+  TextInput,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 
-const Wellness = () => {
-  const navigation = useNavigation(); // Get the navigation object
+const NeedingHelp = () => {
+  const navigation = useNavigation();
   const navOptions = [
     {
-      key: "dailyCheckIn",
-      title: "Daily Check-In",
-      image: require("../image/dailychecking.png"),
-      navigateTo: "DailyCheckIn",
+      key: "generalConcerns",
+      title: "General Concerns",
+      // image: require("../../image/dailychecking.png"),
+      navigateTo: "General",
     },
     {
-      key: "adjustingToMissionaryLife",
-      title: "Adjusting to Missionary Life",
-      image: require("../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "AdjustingLife",
+      key: "physicalConcerns",
+      title: "Physical Concerns",
+      // image: require("../../image/adjustmiss.png"), // Replace with your image path
+      navigateTo: "Physical",
     },
     {
-      key: "needingHelp",
-      title: "Needing Help",
-      image: require("../image/help.png"), // Replace with your image path
-      navigateTo: "NeedingHelp",
-      // onPress: () => {/* Handle navigation or action */}
+      key: "emotionalConcerns",
+      title: "Emotional Concerns",
+      // image: require("../../image/adjustmiss.png"), // Replace with your image path
+      navigateTo: "Emotional",
+    },
+    {
+      key: "socialConcerns",
+      title: "Social Concerns",
+      // image: require("../../image/adjustmiss.png"), // Replace with your image path
+      navigateTo: "Social",
+    },
+    {
+      key: "intellectualConcerns",
+      title: "Intellectual Concerns",
+      // image: require("../../image/adjustmiss.png"), // Replace with your image path
+      navigateTo: "Intellectual",
+    },
+    {
+      key: "spiritualConcerns",
+      title: "Spiritual Concerns",
+      // image: require("../../image/adjustmiss.png"), // Replace with your image path
+      navigateTo: "Spiritual",
+    },
+    {
+      key: "emergencyConcerns",
+      title: "Emergency Concerns",
+      // image: require("../../image/adjustmiss.png"), // Replace with your image path
+      navigateTo: "Emergency",
     },
   ];
+
   const navigateToScreen = (screenName) => {
     // Use the navigation object to navigate to the specified screen
     navigation.navigate(screenName);
@@ -47,7 +74,7 @@ const Wellness = () => {
             style={styles.option}
             onPress={() => navigateToScreen(option.navigateTo)} // Use the navigateTo property
           >
-            <Image source={option.image} style={styles.image} />
+            {/* <Image source={option.image} style={styles.image} /> */}
             <Text style={styles.optionText}>{option.title}</Text>
           </TouchableOpacity>
         ))}
@@ -92,4 +119,4 @@ const styles = StyleSheet.create({
   // Add more styles as needed
 });
 
-export default Wellness;
+export default NeedingHelp;
