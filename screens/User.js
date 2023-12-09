@@ -163,6 +163,7 @@ const styles = StyleSheet.create({
   twoColDiv: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
+    marginBottom: 80,
   },
   threeColDiv: {
     display: "grid",

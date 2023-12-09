@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
   },
   optionText: {
+    textAlign: "center",
     fontSize: 25,
     fontFamily: "Helvetica", // Set text font to Helvetica
     marginTop: 10, // Space between image and text
