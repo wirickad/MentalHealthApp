@@ -5,10 +5,14 @@ import {
   Text,
   StyleSheet,
   Linking,
+  useWindowDimensions,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 const GeneralConcerns = () => {
+  //   const [hoveredOption, setHoveredOption] = useState(null);
+  const { width } = useWindowDimensions();
+
   const linkOptions = [
     {
       key: "17A",
@@ -32,19 +36,6 @@ const GeneralConcerns = () => {
     //   link: "",
     // },
   ];
-  const handleViewResource = (option) => {
-    // Check if the app is installed before trying to open it
-    Linking.canOpenURL(option.link).then((supported) => {
-      if (supported) {
-        Linking.openURL(option.link);
-      } else {
-        console.warn(`App not installed: ${option.link}`);
-        // You can provide feedback to the user that the app is not installed
-      }
-    });
-  };
-
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
@@ -56,20 +47,25 @@ const GeneralConcerns = () => {
         </Text>
         {linkOptions.map((option) => (
           <TouchableOpacity
-            style={[
-              styles.optionText,
-              isHovered ? styles.optionTextHover : null,
-            ]}
             key={option.key}
-            // styles={styles.option}
             onPress={() => {
               Linking.openURL(option.link);
             }}
-            // onPress={handleViewResource(option)}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            // onPressIn={() => setHoveredOption(option.key)}
+            // onPressOut={() => setHoveredOption(null)}
           >
-            <Text style={styles.optionText}>{option.title}</Text>
+            <Text
+              style={[
+                width >= 450
+                  ? styles.optionText
+                  : // : width < 1600 && width >= 1100
+                    // ? styles.midOuterDiv
+                    styles.optionTextMobile,
+                // hoveredOption === option.key ? styles.optionTextHover : null,
+              ]}
+            >
+              {option.title}
+            </Text>
           </TouchableOpacity>
         ))}
       </View>
@@ -82,11 +78,12 @@ const styles = StyleSheet.create({
     flex: 1, // Align to the top
     alignItems: "center",
     padding: 20,
-    backgroundColor: "rgb(125, 180, 125)",
+    backgroundColor: "rgb(125, 179, 122)",
   },
   title: {
     display: "flex",
     justifyContent: "center",
+    textAlign: "center",
     fontSize: 45,
     fontFamily: "Helvetica", // Set text font to Helvetica
     fontWeight: "bold",
@@ -94,6 +91,7 @@ const styles = StyleSheet.create({
   },
   text: {
     display: "flex",
+    textAlign: "center",
     fontSize: 25,
     fontFamily: "Helvetica", // Set text font to Helvetica
   },
@@ -105,17 +103,29 @@ const styles = StyleSheet.create({
     marginTop: 15, // Space between image and text
     border: "1px solid black",
     backgroundColor: "white",
-    // paddingLeft: "40px",
-    // paddingRight: "40px",
     width: "60rem",
     margin: "auto",
     paddingTop: "10px",
     paddingBottom: "10px",
     borderRadius: 10,
   },
-  optionTextHover: {
-    backgroundColor: "grey",
+  optionTextMobile: {
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
+    fontSize: 27,
+    fontFamily: "Helvetica", // Set text font to Helvetica
+    marginTop: 15, // Space between image and text
+    border: "1px solid black",
+    backgroundColor: "white",
+    width: "22rem",
+    margin: "auto",
+    padding: 15,
+    borderRadius: 10,
   },
+  // optionTextHover: {
+  //   backgroundColor: "grey",
+  // },
 });
 
 export default GeneralConcerns;

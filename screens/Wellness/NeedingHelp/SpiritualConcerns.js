@@ -5,10 +5,13 @@ import {
   Text,
   StyleSheet,
   Linking,
+  useWindowDimensions,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 const SpiritualConcerns = () => {
+  const { width } = useWindowDimensions();
+
   const linkOptions = [
     {
       key: "45A",
@@ -59,7 +62,11 @@ const SpiritualConcerns = () => {
             }}
             // onPress={handleViewResource(option)}
           >
-            <Text style={styles.optionText}>{option.title}</Text>
+            <Text
+              style={width >= 450 ? styles.optionText : styles.optionTextMobile}
+            >
+              {option.title}
+            </Text>
           </TouchableOpacity>
         ))}
       </View>
@@ -77,6 +84,7 @@ const styles = StyleSheet.create({
   title: {
     display: "flex",
     justifyContent: "center",
+    textAlign: "center",
     fontSize: 45,
     fontFamily: "Helvetica", // Set text font to Helvetica
     fontWeight: "bold",
@@ -84,6 +92,7 @@ const styles = StyleSheet.create({
   },
   text: {
     display: "flex",
+    textAlign: "center",
     fontSize: 25,
     fontFamily: "Helvetica", // Set text font to Helvetica
   },
@@ -95,12 +104,24 @@ const styles = StyleSheet.create({
     marginTop: 15, // Space between image and text
     border: "1px solid black",
     backgroundColor: "white",
-    // paddingLeft: "40px",
-    // paddingRight: "40px",
     width: "60rem",
     margin: "auto",
     paddingTop: "10px",
     paddingBottom: "10px",
+    borderRadius: 10,
+  },
+  optionTextMobile: {
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
+    fontSize: 27,
+    fontFamily: "Helvetica", // Set text font to Helvetica
+    marginTop: 15, // Space between image and text
+    border: "1px solid black",
+    backgroundColor: "white",
+    width: "22rem",
+    margin: "auto",
+    padding: 15,
     borderRadius: 10,
   },
 });
