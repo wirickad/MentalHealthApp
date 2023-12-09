@@ -19,43 +19,43 @@ const NeedingHelp = () => {
       key: "generalConcerns",
       title: "General Concerns",
       // image: require("../../image/dailychecking.png"),
-      navigateTo: "General",
+      navigateTo: "GeneralConcerns",
     },
     {
       key: "physicalConcerns",
       title: "Physical Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Physical",
+      navigateTo: "PhysicalConcerns",
     },
     {
       key: "emotionalConcerns",
       title: "Emotional Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Emotional",
+      navigateTo: "EmotionalConcerns",
     },
     {
       key: "socialConcerns",
       title: "Social Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Social",
+      navigateTo: "SocialConcerns",
     },
     {
       key: "intellectualConcerns",
       title: "Intellectual Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Intellectual",
+      navigateTo: "IntellectualConcerns",
     },
     {
       key: "spiritualConcerns",
       title: "Spiritual Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Spiritual",
+      navigateTo: "SpiritualConcerns",
     },
     {
-      key: "emergencyConcerns",
-      title: "Emergency Concerns",
+      key: "moreSeriousConcerns",
+      title: "More Serious Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "Emergency",
+      navigateTo: "MoreSeriousConcerns",
     },
   ];
 
@@ -67,14 +67,13 @@ const NeedingHelp = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Text style={styles.text}>Missionary Wellness</Text>
+        <Text style={styles.text}>Needing Help</Text>
         {navOptions.map((option) => (
           <TouchableOpacity
             key={option.key}
             style={styles.option}
             onPress={() => navigateToScreen(option.navigateTo)} // Use the navigateTo property
           >
-            {/* <Image source={option.image} style={styles.image} /> */}
             <Text style={styles.optionText}>{option.title}</Text>
           </TouchableOpacity>
         ))}
@@ -88,7 +87,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-start", // Align to the top
     alignItems: "center",
-    backgroundColor: "#5cacd4", // light blue background
+    backgroundColor: "rgb(255, 215, 70)", // light blue background
     padding: 20,
   },
   text: {
@@ -107,14 +106,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
   },
   optionText: {
-    fontSize: 18,
+    fontSize: 25,
     fontFamily: "Helvetica", // Set text font to Helvetica
     marginTop: 10, // Space between image and text
-  },
-  image: {
-    width: 180, // Example width
-    height: 180, // Example height
-    resizeMode: "contain", // Keep image aspect ratio
   },
   // Add more styles as needed
 });

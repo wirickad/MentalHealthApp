@@ -12,6 +12,13 @@ import NewContact from "./screens/More/NewContact";
 import AdjustingLife from "./screens/Wellness/AdjustingLife";
 import DailyCheckIn from "./screens/Wellness/DailyCheckIn";
 import NeedingHelp from "./screens/Wellness/NeedingHelp";
+import PhysicalConcerns from "./screens/Wellness/NeedingHelp/PhysicalConcerns";
+import GeneralConcerns from "./screens/Wellness/NeedingHelp/GeneralConcerns";
+import EmotionalConcerns from "./screens/Wellness/NeedingHelp/EmotionalConcerns";
+import IntellectualConcerns from "./screens/Wellness/NeedingHelp/IntellectualConcerns";
+import SocialConcerns from "./screens/Wellness/NeedingHelp/SocialConcerns";
+import SpiritualConcerns from "./screens/Wellness/NeedingHelp/SpiritualConcerns";
+import MoreSeriousConcerns from "./screens/Wellness/NeedingHelp/MoreSeriousConcerns";
 //import ForMyCompanion from './screens/Emergency/ForMyCompanion';
 
 // Tab navigator
@@ -101,6 +108,20 @@ const WellnessStackNavigator = () => {
       <Stack.Screen name="AdjustingLife" component={AdjustingLife} />
       <Stack.Screen name="DailyCheckIn" component={DailyCheckIn} />
       <Stack.Screen name="NeedingHelp" component={NeedingHelp} />
+      <Stack.Screen name="GeneralConcerns" component={GeneralConcerns} />
+      <Stack.Screen name="PhysicalConcerns" component={PhysicalConcerns} />
+      <Stack.Screen name="EmotionalConcerns" component={EmotionalConcerns} />
+      <Stack.Screen
+        name="MoreSeriousConcerns"
+        component={MoreSeriousConcerns}
+      />
+      <Stack.Screen
+        name="IntellectualConcerns"
+        component={IntellectualConcerns}
+      />
+      <Stack.Screen name="SocialConcerns" component={SocialConcerns} />
+      <Stack.Screen name="SpiritualConcerns" component={SpiritualConcerns} />
+      {/* <Stack.Screen name="EmergencyConcerns" component={EmergencyConcerns} /> */}
     </WellnessStack.Navigator>
   );
 };
