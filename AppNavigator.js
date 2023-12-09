@@ -18,6 +18,7 @@ import EmotionalConcerns from "./screens/Wellness/NeedingHelp/EmotionalConcerns"
 import IntellectualConcerns from "./screens/Wellness/NeedingHelp/IntellectualConcerns";
 import SocialConcerns from "./screens/Wellness/NeedingHelp/SocialConcerns";
 import SpiritualConcerns from "./screens/Wellness/NeedingHelp/SpiritualConcerns";
+import MoreSeriousConcerns from "./screens/Wellness/NeedingHelp/MoreSeriousConcerns";
 //import ForMyCompanion from './screens/Emergency/ForMyCompanion';
 
 // Tab navigator
@@ -110,6 +111,10 @@ const WellnessStackNavigator = () => {
       <Stack.Screen name="GeneralConcerns" component={GeneralConcerns} />
       <Stack.Screen name="PhysicalConcerns" component={PhysicalConcerns} />
       <Stack.Screen name="EmotionalConcerns" component={EmotionalConcerns} />
+      <Stack.Screen
+        name="MoreSeriousConcerns"
+        component={MoreSeriousConcerns}
+      />
       <Stack.Screen
         name="IntellectualConcerns"
         component={IntellectualConcerns}

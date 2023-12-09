@@ -8,36 +8,46 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
-const IntellectualConcerns = () => {
+const MoreSeriousConcerns = () => {
   const linkOptions = [
     {
-      key: "41A",
-      title: "Are you having difficulty learning the language?",
-      link: "https://www.churchofjesuschrist.org/study/manual/resource-booklet-adjusting-to-missionary-life/suggestions-and-tools/resources-for-managing-intellectual-demands?lang=eng#title_number1",
+      key: "MS1",
+      title: "Do you have desires to harm yourself or someone else?",
+      link: "",
     },
     {
-      key: "41B",
-      title:
-        "Are you having difficulty staying organized with goals and plans?",
-      link: "https://www.churchofjesuschrist.org/study/manual/resource-booklet-adjusting-to-missionary-life/suggestions-and-tools/resources-for-managing-intellectual-demands?lang=eng#title_number2",
+      key: "MS2",
+      title: "Are you having difficulty getting out of bed?",
+      link: "",
     },
     {
-      key: "43C",
+      key: "MS3",
       title:
-        "Are you having difficulty not feeling as smart or as capable as others?",
-      link: "https://www.churchofjesuschrist.org/study/manual/resource-booklet-adjusting-to-missionary-life/suggestions-and-tools/resources-for-managing-intellectual-demands?lang=eng#title_number3",
+        "Have you purposely been withholding yourself from food or other neccessities?",
+      link: "",
     },
-    //   {
-    //     key: "",
-    //     title: "",
-    //     link: "",
-    //   },
+    {
+      key: "MS4",
+      title: "Are you having difficulty avoiding pornographic materials?",
+      link: "",
+    },
+    {
+      key: "MS5",
+      title:
+        "Do you feel like you are in physical or emotional harm in your community or home?",
+      link: "",
+    },
+    // {
+    //   key: "",
+    //   title: "",
+    //   link: "",
+    // },
   ];
 
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Text style={styles.title}>Intellectual Concerns</Text>
+        <Text style={styles.title}>More Serious Concerns</Text>
         <Text style={styles.text}>
           Click on the question that will help you the most. This will lead you
           to resources to help.
@@ -64,9 +74,7 @@ const styles = StyleSheet.create({
     flex: 1, // Align to the top
     alignItems: "center",
     padding: 20,
-    backgroundColor: "rgb(0, 155, 155)",
-    // rgb(0, 155, 155)
-    // rgb(0, 155, 178)
+    backgroundColor: "rgb(165, 70, 85)",
   },
   title: {
     display: "flex",
@@ -99,4 +107,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default IntellectualConcerns;
+export default MoreSeriousConcerns;
