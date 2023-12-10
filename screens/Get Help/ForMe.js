@@ -7,28 +7,33 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const ForMe = ({ navigation }) => {
+const ForMe = () => {
+  const navigation = useNavigation();
+
   const options = [
     {
       key: "emergency",
       title: "Emergency",
       image: require("../../image/warning.png"),
-      // onPress: () => {/* Handle navigation or action */}
     },
     {
       key: "feelingBlue",
       title: "Feeling Blue",
       image: require("../../image/blue.png"),
-      // onPress: () => {/* Handle navigation or action */}
     },
     {
-      key: "talkToTherapist",
+      key: "TalkToTherapist",
       title: "Talk to a Therapist",
       image: require("../../image/therapist.png"),
-      // onPress: () => {/* Handle navigation or action */}
+      onPress: () => navigateToScreen("TalkToTherapist"),
     },
   ];
+
+  const navigateToScreen = (screenName) => {
+    navigation.navigate(screenName);
+  };
 
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
@@ -38,7 +43,7 @@ const ForMe = ({ navigation }) => {
           <TouchableOpacity
             key={option.key}
             style={styles.option}
-            onPress={option.onPress}
+            onPress={() => navigateToScreen(option.key)}
           >
             <Image source={option.image} style={styles.image} />
             <Text style={styles.optionText}>{option.title}</Text>
@@ -52,9 +57,9 @@ const ForMe = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start", // Align to the top
+    justifyContent: "flex-start",
     alignItems: "center",
-    paddingTop: 20, // Add padding at the top
+    paddingTop: 20,
     backgroundColor: "#759CD3",
   },
   header: {
@@ -63,24 +68,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   option: {
-    width: "80%", // Set width
+    width: "80%",
     padding: 20,
-    borderRadius: 10, // Rounded corners
+    borderRadius: 10,
     marginBottom: 10,
-    alignItems: "center", // Center content
-    justifyContent: "center", // Center content
-    backgroundColor: "#EFEFEF", // Example background color
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#EFEFEF",
   },
   optionText: {
     fontSize: 18,
-    marginTop: 10, // Space between image and text
+    marginTop: 10,
   },
   image: {
-    width: 180, // Example width
-    height: 180, // Example height
-    resizeMode: "contain", // Keep image aspect ratio
+    width: 180,
+    height: 180,
+    resizeMode: "contain",
   },
-  // Add more styles as needed
 });
 
 export default ForMe;
