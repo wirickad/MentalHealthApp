@@ -19,6 +19,7 @@ import IntellectualConcerns from "./screens/Wellness/NeedingHelp/IntellectualCon
 import SocialConcerns from "./screens/Wellness/NeedingHelp/SocialConcerns";
 import SpiritualConcerns from "./screens/Wellness/NeedingHelp/SpiritualConcerns";
 import MoreSeriousConcerns from "./screens/Wellness/NeedingHelp/MoreSeriousConcerns";
+import TalkToTherapist from "./screens/Get Help/TalkToTherapist";
 //import ForMyCompanion from './screens/Emergency/ForMyCompanion';
 
 // Tab navigator
@@ -79,7 +80,16 @@ const Stack = createStackNavigator();
 const GetHelpStackNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="GetHelp">
-      <Stack.Screen name="GetHelp" component={GetHelp} options={{ headerShown: false }}/>
+      <Stack.Screen
+        name="GetHelp"
+        component={GetHelp}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="TalkToTherapist"
+        component={TalkToTherapist}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen name="For Me" component={ForMe} />
       {/* <Stack.Screen name="ForMyCompanion" component={ForMyCompanion} /> */}
     </Stack.Navigator>
@@ -92,7 +102,11 @@ const MoreStack = createStackNavigator();
 const MoreStackNavigator = () => {
   return (
     <MoreStack.Navigator>
-      <MoreStack.Screen name="More" component={More} options={{ headerShown: false }}/>
+      <MoreStack.Screen
+        name="More"
+        component={More}
+        options={{ headerShown: false }}
+      />
       <MoreStack.Screen name="Settings" component={Settings} />
       <MoreStack.Screen name="New Contact" component={NewContact} />
     </MoreStack.Navigator>
@@ -104,15 +118,28 @@ const WellnessStack = createStackNavigator();
 const WellnessStackNavigator = () => {
   return (
     <WellnessStack.Navigator>
-      <WellnessStack.Screen name="Wellness" component={Wellness} options={{ headerShown: false }}/>
-      <Stack.Screen name="Adjusting to Missionary Life" component={AdjustingLife} />
+      <WellnessStack.Screen
+        name="Wellness"
+        component={Wellness}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Adjusting to Missionary Life"
+        component={AdjustingLife}
+      />
       <Stack.Screen name="Daily Check-In" component={DailyCheckIn} />
       <Stack.Screen name="Needing Help?" component={NeedingHelp} />
       <Stack.Screen name="General Concerns" component={GeneralConcerns} />
       <Stack.Screen name="Physical Concerns" component={PhysicalConcerns} />
       <Stack.Screen name="Emotional Concerns" component={EmotionalConcerns} />
-      <Stack.Screen name="More Serious Concerns" component={MoreSeriousConcerns}/>
-      <Stack.Screen name="Intellectual Concerns" component={IntellectualConcerns}/>
+      <Stack.Screen
+        name="More Serious Concerns"
+        component={MoreSeriousConcerns}
+      />
+      <Stack.Screen
+        name="Intellectual Concerns"
+        component={IntellectualConcerns}
+      />
       <Stack.Screen name="Social Concerns" component={SocialConcerns} />
       <Stack.Screen name="Spiritual Concerns" component={SpiritualConcerns} />
       {/* <Stack.Screen name="EmergencyConcerns" component={EmergencyConcerns} /> */}
