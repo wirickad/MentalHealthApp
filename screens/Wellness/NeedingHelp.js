@@ -19,43 +19,43 @@ const NeedingHelp = () => {
       key: "generalConcerns",
       title: "General Concerns",
       // image: require("../../image/dailychecking.png"),
-      navigateTo: "GeneralConcerns",
+      navigateTo: "General Concerns",
     },
     {
       key: "physicalConcerns",
       title: "Physical Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "PhysicalConcerns",
+      navigateTo: "Physical Concerns",
     },
     {
       key: "emotionalConcerns",
       title: "Emotional Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "EmotionalConcerns",
+      navigateTo: "Emotional Concerns",
     },
     {
       key: "socialConcerns",
       title: "Social Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "SocialConcerns",
+      navigateTo: "Social Concerns",
     },
     {
       key: "intellectualConcerns",
       title: "Intellectual Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "IntellectualConcerns",
+      navigateTo: "Intellectual Concerns",
     },
     {
       key: "spiritualConcerns",
       title: "Spiritual Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "SpiritualConcerns",
+      navigateTo: "Spiritual Concerns",
     },
     {
       key: "moreSeriousConcerns",
       title: "More Serious Concerns",
       // image: require("../../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "MoreSeriousConcerns",
+      navigateTo: "More Serious Concerns",
     },
   ];
 
@@ -67,7 +67,7 @@ const NeedingHelp = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Text style={styles.text}>Needing Help</Text>
+        <Text style={styles.text}>Needing Help?</Text>
         {navOptions.map((option) => (
           <TouchableOpacity
             key={option.key}

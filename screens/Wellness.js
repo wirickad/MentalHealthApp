@@ -16,19 +16,19 @@ const Wellness = () => {
       key: "dailyCheckIn",
       title: "Daily Check-In",
       image: require("../image/dailychecking.png"),
-      navigateTo: "DailyCheckIn",
+      navigateTo: "Daily Check-In",
     },
     {
       key: "adjustingToMissionaryLife",
       title: "Adjusting to Missionary Life",
       image: require("../image/adjustmiss.png"), // Replace with your image path
-      navigateTo: "AdjustingLife",
+      navigateTo: "Adjusting to Missionary Life",
     },
     {
       key: "needingHelp",
-      title: "Needing Help",
+      title: "Needing Help?",
       image: require("../image/help.png"), // Replace with your image path
-      navigateTo: "NeedingHelp",
+      navigateTo: "Needing Help?",
       // onPress: () => {/* Handle navigation or action */}
     },
   ];
@@ -40,7 +40,6 @@ const Wellness = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Text style={styles.text}>Missionary Wellness</Text>
         {navOptions.map((option) => (
           <TouchableOpacity
             key={option.key}

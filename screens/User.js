@@ -33,7 +33,6 @@ const User = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Text style={styles.text}>User</Text>
         {navOptions.map((option) => (
           <TouchableOpacity
             key={option.key}

@@ -11,7 +11,7 @@ const Settings = () => {
       backgroundColor: "#EFEFEF",
       title: "Emergency Contact",
       image: require("../..//image/emergencycontact.png"),
-      navigateTo: "NewContact",
+      navigateTo: "New Contact",
     },
   ];
 
