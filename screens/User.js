@@ -82,6 +82,36 @@ const User = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
+        <Text style={styles.text}>User Dashboard</Text>
+        <Text style={styles.title}>Sarah Jolynn Smith</Text>
+        <View
+          style={
+            width >= 1825
+              ? styles.threeColDiv
+              : // : width < 1600 && width >= 1100
+                // ? styles.midOuterDiv
+                styles.mobileView
+          }
+        >
+          <Image
+            source={require("../image/profile.png")}
+            style={styles.image}
+          />
+          <View style={styles.vertCenter}>
+            <Text style={styles.text}>Mission: Louisiana Baton Rouge</Text>
+            <Text style={styles.text}>Area: Purvis, MS</Text>
+            <Text style={styles.text}>Companion: Sister K. Roberts</Text>
+            <Text style={styles.text}>Expected Departure Date: 11/12/2020</Text>
+          </View>
+          <View
+            style={
+              width >= 450
+                ? styles.lineGraph
+                : // : width < 1600 && width >= 1100
+                  // ? styles.midOuterDiv
+                  styles.mobileGraph
+            }
+          >
             <canvas ref={chartRef} />
           </View>
         </View>
