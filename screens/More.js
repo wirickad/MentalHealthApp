@@ -37,7 +37,6 @@ const More = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Text style={styles.header}>More</Text>
         {navOptions.map((option) => (
           <TouchableOpacity
             key={option.key}

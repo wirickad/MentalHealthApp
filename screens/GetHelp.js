@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 
-const Emergency = () => {
+const GetHelp = () => {
   const navigation = useNavigation(); // Get the navigation object
   const navOptions = [
     {
@@ -17,7 +17,7 @@ const Emergency = () => {
       text: "For Me",
       backgroundColor: "#EFEFEF",
       image: require("../image/sister.png"),
-      navigateTo: "ForMe",
+      navigateTo: "For Me",
     },
     {
       key: "forCompanion",
@@ -37,7 +37,6 @@ const Emergency = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Text style={styles.header}>Get Help</Text>
         {navOptions.map((option) => (
           <TouchableOpacity
             key={option.key}
@@ -87,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Emergency;
+export default GetHelp;
