@@ -100,7 +100,7 @@ const User = () => {
           <View style={styles.vertCenter}>
             <Text style={styles.text}>Mission: Louisiana Baton Rouge</Text>
             <Text style={styles.text}>Area: Purvis, MS</Text>
-            <Text style={styles.text}>Companion: Sister Roberts</Text>
+            <Text style={styles.text}>Companion: Sister K. Roberts</Text>
             <Text style={styles.text}>Expected Departure Date: 11/12/2020</Text>
           </View>
           <View
