@@ -3,10 +3,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Ionicons, MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import Wellness from "./screens/Wellness";
-import Emergency from "./screens/Emergency";
 import User from "./screens/User";
 import More from "./screens/More";
-import ForMe from "./screens/Emergency/ForMe";
+import GetHelp from "./screens/GetHelp";
+import ForMe from "./screens/Get Help/ForMe";
 import Settings from "./screens/More/Settings";
 import NewContact from "./screens/More/NewContact";
 import AdjustingLife from "./screens/Wellness/AdjustingLife";
@@ -44,7 +44,7 @@ const AppNavigator = () => {
             iconComponent = (
               <Ionicons name={iconName} size={size} color={color} />
             );
-          } else if (route.name === "Help") {
+          } else if (route.name === "Get Help") {
             iconName = "md-alert";
             iconComponent = (
               <Ionicons name={iconName} size={size} color={color} />
@@ -66,21 +66,21 @@ const AppNavigator = () => {
       })}
     >
       <Tab.Screen name="Wellness" component={WellnessStackNavigator} />
-      <Tab.Screen name="Help" component={EmergencyStackNavigator} />
+      <Tab.Screen name="Get Help" component={GetHelpStackNavigator} />
       <Tab.Screen name="User" component={User} />
       <Tab.Screen name="More" component={MoreStackNavigator} />
     </Tab.Navigator>
   );
 };
 
-// Emergency Navigator
+// GetHelp Navigator
 const Stack = createStackNavigator();
 
-const EmergencyStackNavigator = () => {
+const GetHelpStackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Emergency">
-      <Stack.Screen name="Help" component={Emergency} />
-      <Stack.Screen name="ForMe" component={ForMe} />
+    <Stack.Navigator initialRouteName="GetHelp">
+      <Stack.Screen name="GetHelp" component={GetHelp} options={{ headerShown: false }}/>
+      <Stack.Screen name="For Me" component={ForMe} />
       {/* <Stack.Screen name="ForMyCompanion" component={ForMyCompanion} /> */}
     </Stack.Navigator>
   );
@@ -92,9 +92,9 @@ const MoreStack = createStackNavigator();
 const MoreStackNavigator = () => {
   return (
     <MoreStack.Navigator>
-      <MoreStack.Screen name="More" component={More} />
+      <MoreStack.Screen name="More" component={More} options={{ headerShown: false }}/>
       <MoreStack.Screen name="Settings" component={Settings} />
-      <MoreStack.Screen name="NewContact" component={NewContact} />
+      <MoreStack.Screen name="New Contact" component={NewContact} />
     </MoreStack.Navigator>
   );
 };
@@ -104,23 +104,17 @@ const WellnessStack = createStackNavigator();
 const WellnessStackNavigator = () => {
   return (
     <WellnessStack.Navigator>
-      <WellnessStack.Screen name="Wellness" component={Wellness} />
-      <Stack.Screen name="AdjustingLife" component={AdjustingLife} />
-      <Stack.Screen name="DailyCheckIn" component={DailyCheckIn} />
-      <Stack.Screen name="NeedingHelp" component={NeedingHelp} />
-      <Stack.Screen name="GeneralConcerns" component={GeneralConcerns} />
-      <Stack.Screen name="PhysicalConcerns" component={PhysicalConcerns} />
-      <Stack.Screen name="EmotionalConcerns" component={EmotionalConcerns} />
-      <Stack.Screen
-        name="MoreSeriousConcerns"
-        component={MoreSeriousConcerns}
-      />
-      <Stack.Screen
-        name="IntellectualConcerns"
-        component={IntellectualConcerns}
-      />
-      <Stack.Screen name="SocialConcerns" component={SocialConcerns} />
-      <Stack.Screen name="SpiritualConcerns" component={SpiritualConcerns} />
+      <WellnessStack.Screen name="Wellness" component={Wellness} options={{ headerShown: false }}/>
+      <Stack.Screen name="Adjusting to Missionary Life" component={AdjustingLife} />
+      <Stack.Screen name="Daily Check-In" component={DailyCheckIn} />
+      <Stack.Screen name="Needing Help?" component={NeedingHelp} />
+      <Stack.Screen name="General Concerns" component={GeneralConcerns} />
+      <Stack.Screen name="Physical Concerns" component={PhysicalConcerns} />
+      <Stack.Screen name="Emotional Concerns" component={EmotionalConcerns} />
+      <Stack.Screen name="More Serious Concerns" component={MoreSeriousConcerns}/>
+      <Stack.Screen name="Intellectual Concerns" component={IntellectualConcerns}/>
+      <Stack.Screen name="Social Concerns" component={SocialConcerns} />
+      <Stack.Screen name="Spiritual Concerns" component={SpiritualConcerns} />
       {/* <Stack.Screen name="EmergencyConcerns" component={EmergencyConcerns} /> */}
     </WellnessStack.Navigator>
   );
@@ -128,7 +122,7 @@ const WellnessStackNavigator = () => {
 
 export {
   AppNavigator,
-  EmergencyStackNavigator,
+  GetHelpStackNavigator,
   MoreStackNavigator,
   WellnessStackNavigator,
 };
