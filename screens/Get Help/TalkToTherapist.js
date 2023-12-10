@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     paddingVertical: 0,
   },
   messageContainer: {
-    maxWidth: "50%",
+    maxWidth: "80%",
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,
