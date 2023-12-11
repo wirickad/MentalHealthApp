@@ -7,6 +7,7 @@ import User from "./screens/User";
 import More from "./screens/More";
 import GetHelp from "./screens/GetHelp";
 import ForMe from "./screens/Get Help/ForMe";
+import Emergency from "./screens/Get Help/Emergency";
 import MessageSentScreen from "./screens/Get Help/MessageSentScreen";
 import Settings from "./screens/More/Settings";
 import AlertContacts from "./screens/More/AlertContacts";
@@ -93,6 +94,7 @@ const GetHelpStackNavigator = () => {
         options={{ headerShown: true }}
       />
       <Stack.Screen name="For Me" component={ForMe} />
+      <Stack.Screen name="Emergency" component={Emergency} />
       <Stack.Screen name="MessageSentScreen" component={MessageSentScreen} />
     </Stack.Navigator>
   );
