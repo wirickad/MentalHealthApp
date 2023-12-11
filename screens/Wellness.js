@@ -25,10 +25,10 @@ const Wellness = () => {
       navigateTo: "Adjusting to Missionary Life",
     },
     {
-      key: "needingHelp",
-      title: "Needing Help?",
+      key: "wrc",
+      title: "Wellness Ressource Center",
       image: require("../image/help.png"), // Replace with your image path
-      navigateTo: "Needing Help?",
+      navigateTo: "Wellness Ressource Center",
       // onPress: () => {/* Handle navigation or action */}
     },
   ];
