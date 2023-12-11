@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 
 const GetHelp = () => {
@@ -18,6 +12,13 @@ const GetHelp = () => {
       image: require("../image/sister.png"),
       navigateTo: "For Me",
     },
+    {
+      key: "emergency",
+      text: "Crisis Intervention",
+      backgroundColor: "#EFEFEF",
+      image: require("../image/warning.png"),
+      navigateTo: "Emergency",
+    },
   ];
 
   const navigateToScreen = (screenName) => {
@@ -26,18 +27,18 @@ const GetHelp = () => {
   };
 
   return (
-      <View style={styles.container}>
-        {navOptions.map((option) => (
-          <TouchableOpacity
-            key={option.key}
-            style={[styles.option, { backgroundColor: option.backgroundColor }]}
-            onPress={() => navigateToScreen(option.navigateTo)} // Use the navigateTo property
-          >
-            <Image source={option.image} style={styles.image} />
-            <Text style={styles.optionText}>{option.text}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
+    <View style={styles.container}>
+      {navOptions.map((option) => (
+        <TouchableOpacity
+          key={option.key}
+          style={[styles.option, { backgroundColor: option.backgroundColor }]}
+          onPress={() => navigateToScreen(option.navigateTo)} // Use the navigateTo property
+        >
+          <Image source={option.image} style={styles.image} />
+          <Text style={styles.optionText}>{option.text}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
   );
 };
 
