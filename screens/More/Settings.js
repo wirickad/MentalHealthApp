@@ -15,11 +15,11 @@ const Settings = () => {
     },
     {
       key: "alertContacts",
-      text: "Alert Contacts",
+      text: "Alert Loved Ones",
       backgroundColor: "#EFEFEF",
-      title: "Alert Contacts",
+      title: "Alert Loved Ones",
       image: require("../..//image/emergencycontact.png"),
-      navigateTo: "Alert Contacts",
+      navigateTo: "Alert Loved Ones",
     },
   ];
 

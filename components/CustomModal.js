@@ -2,11 +2,11 @@ import React from 'react';
 import { Modal, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-
 const CustomModal = ({ visible, onYesPress, onNoPress }) => {
   const navigation = useNavigation();
 
   const handleYesPress = () => {
+    onYesPress();
     navigation.navigate('MessageSentScreen');
   };
 

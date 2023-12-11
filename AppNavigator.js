@@ -113,7 +113,7 @@ const MoreStackNavigator = () => {
       />
       <MoreStack.Screen name="Settings" component={Settings} />
       <MoreStack.Screen name="FAQ" component={FAQ} />
-      <MoreStack.Screen name="Alert Contacts" component={AlertContacts} />
+      <MoreStack.Screen name="Alert Loved Ones" component={AlertContacts} />
       <MoreStack.Screen name="Account Settings" component={AccountSettings} />
     </MoreStack.Navigator>
   );

@@ -1,18 +1,7 @@
-import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  Alert,
-} from "react-native";
-import { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
-
 import CustomModal from '../../components/CustomModal';
-
-
 
 const ForMe = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -20,7 +9,15 @@ const ForMe = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
+    return () => {
+      // Reset modalVisible when component unmounts
+      setModalVisible(false);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!modalVisible && navigateToMessageSent) {
+      // Navigate after the modal is closed
       navigation.navigate('MessageSentScreen');
       setNavigateToMessageSent(false); // Reset the navigation trigger
     }
@@ -42,7 +39,9 @@ const ForMe = () => {
   ];
 
   const navigateToScreen = (screenName) => {
-    navigation.navigate(screenName);
+    setModalVisible(false); // Close the modal
+    setNavigateToMessageSent(true); // Set the navigation trigger
+    // The navigation logic will be handled in the useEffect
   };
 
   return (
@@ -70,7 +69,6 @@ const ForMe = () => {
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
