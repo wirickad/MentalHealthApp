@@ -19,7 +19,7 @@ const CustomModal = ({ visible, onYesPress, onNoPress }) => {
     >
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-          <Text style={styles.modalText}>Do you want to let your loved ones know how you're feeling?</Text>
+          <Text style={styles.modalText}>Do you want to let your loved ones know you are struggling?</Text>
           
           <TouchableOpacity style={styles.button} onPress={handleYesPress}>
             <Text style={styles.buttonText}>Yes</Text>

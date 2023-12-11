@@ -88,13 +88,12 @@ const GetHelpStackNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="TalkToTherapist"
+        name="Talk To Therapist"
         component={TalkToTherapist}
         options={{ headerShown: true }}
       />
       <Stack.Screen name="For Me" component={ForMe} />
       <Stack.Screen name="MessageSentScreen" component={MessageSentScreen} />
-      {/* <Stack.Screen name="ForMyCompanion" component={ForMyCompanion} /> */}
     </Stack.Navigator>
   );
 };

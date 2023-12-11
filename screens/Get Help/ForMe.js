@@ -42,7 +42,7 @@ const ForMe = () => {
       title: "Talk to a Therapist",
       image: require("../../image/therapist.png"),
 
-      onPress: () => navigateToScreen("TalkToTherapist"),
+      onPress: () => navigateToScreen("Talk To Therapist"),
     },
   ];
 
