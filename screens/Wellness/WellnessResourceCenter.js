@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 
-const NeedingHelp = () => {
+const WellnessResourceCenter = () => {
   const navigation = useNavigation();
   const navOptions = [
     {
@@ -114,4 +114,4 @@ const styles = StyleSheet.create({
   // Add more styles as needed
 });
 
-export default NeedingHelp;
+export default WellnessResourceCenter;

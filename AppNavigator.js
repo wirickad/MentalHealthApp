@@ -5,23 +5,23 @@ import { Ionicons, MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import Wellness from "./screens/Wellness";
 import User from "./screens/User";
 import More from "./screens/More";
-import GetHelp from "./screens/GetHelp";
-import ForMe from "./screens/Get Help/ForMe";
-import Emergency from "./screens/Get Help/Emergency";
-import MessageSentScreen from "./screens/Get Help/MessageSentScreen";
+import Support from "./screens/SupportConnection";
+import ForMe from "./screens/Support Connection/ForMe";
+import Emergency from "./screens/Support Connection/Emergency";
+import MessageSentScreen from "./screens/Support Connection/MessageSentScreen";
 import Settings from "./screens/More/Settings";
 import AlertContacts from "./screens/More/AlertContacts";
 import AdjustingLife from "./screens/Wellness/AdjustingLife";
 import DailyCheckIn from "./screens/Wellness/DailyCheckIn";
-import NeedingHelp from "./screens/Wellness/NeedingHelp";
-import PhysicalConcerns from "./screens/Wellness/NeedingHelp/PhysicalConcerns";
-import GeneralConcerns from "./screens/Wellness/NeedingHelp/GeneralConcerns";
-import EmotionalConcerns from "./screens/Wellness/NeedingHelp/EmotionalConcerns";
-import IntellectualConcerns from "./screens/Wellness/NeedingHelp/IntellectualConcerns";
-import SocialConcerns from "./screens/Wellness/NeedingHelp/SocialConcerns";
-import SpiritualConcerns from "./screens/Wellness/NeedingHelp/SpiritualConcerns";
-import MoreSeriousConcerns from "./screens/Wellness/NeedingHelp/MoreSeriousConcerns";
-import TalkToTherapist from "./screens/Get Help/TalkToTherapist";
+import WRC from "./screens/Wellness/WellnessResourceCenter";
+import PhysicalConcerns from "./screens/Wellness/WellnessResourceCenter/PhysicalConcerns";
+import GeneralConcerns from "./screens/Wellness/WellnessResourceCenter/GeneralConcerns";
+import EmotionalConcerns from "./screens/Wellness/WellnessResourceCenter/EmotionalConcerns";
+import IntellectualConcerns from "./screens/Wellness/WellnessResourceCenter/IntellectualConcerns";
+import SocialConcerns from "./screens/Wellness/WellnessResourceCenter/SocialConcerns";
+import SpiritualConcerns from "./screens/Wellness/WellnessResourceCenter/SpiritualConcerns";
+import MoreSeriousConcerns from "./screens/Wellness/WellnessResourceCenter/MoreSeriousConcerns";
+import TalkToTherapist from "./screens/Support Connection/TalkToTherapist";
 import AccountSettings from "./screens/More/AccountSettings";
 import FAQ from "./screens/More/FAQ";
 
@@ -70,22 +70,22 @@ const AppNavigator = () => {
       })}
     >
       <Tab.Screen name="Wellness" component={WellnessStackNavigator} />
-      <Tab.Screen name="Get Help" component={GetHelpStackNavigator} />
+      <Tab.Screen name="Support Connection" component={SupportStackNavigator} />
       <Tab.Screen name="User" component={User} />
       <Tab.Screen name="More" component={MoreStackNavigator} />
     </Tab.Navigator>
   );
 };
 
-// GetHelp Navigator
+// Support Navigator
 const Stack = createStackNavigator();
 
-const GetHelpStackNavigator = () => {
+const SupportStackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="GetHelp">
+    <Stack.Navigator initialRouteName="Support">
       <Stack.Screen
-        name="GetHelp"
-        component={GetHelp}
+        name="Support"
+        component={Support}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -134,7 +134,7 @@ const WellnessStackNavigator = () => {
         component={AdjustingLife}
       />
       <Stack.Screen name="Daily Check-In" component={DailyCheckIn} />
-      <Stack.Screen name="Needing Help?" component={NeedingHelp} />
+      <Stack.Screen name="Wellness Resource Center" component={WRC} />
       <Stack.Screen name="General Concerns" component={GeneralConcerns} />
       <Stack.Screen name="Physical Concerns" component={PhysicalConcerns} />
       <Stack.Screen name="Emotional Concerns" component={EmotionalConcerns} />
@@ -155,7 +155,7 @@ const WellnessStackNavigator = () => {
 
 export {
   AppNavigator,
-  GetHelpStackNavigator,
+  SupportStackNavigator,
   MoreStackNavigator,
   WellnessStackNavigator,
 };
