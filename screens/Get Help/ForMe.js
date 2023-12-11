@@ -1,27 +1,37 @@
 import React from "react";
 import {
-  ScrollView,
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   Image,
+  Alert,
 } from "react-native";
+import { useState, useEffect} from 'react';
 import { useNavigation } from "@react-navigation/native";
 
+import CustomModal from '../../components/CustomModal';
+
+
+
 const ForMe = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [navigateToMessageSent, setNavigateToMessageSent] = useState(false);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    if (!modalVisible && navigateToMessageSent) {
+      navigation.navigate('MessageSentScreen');
+      setNavigateToMessageSent(false); // Reset the navigation trigger
+    }
+  }, [modalVisible, navigateToMessageSent, navigation]);
 
   const options = [
     {
-      key: "emergency",
-      title: "Emergency",
-      image: require("../../image/warning.png"),
-    },
-    {
       key: "feelingBlue",
-      title: "Feeling Blue",
+      title: "Reach Out When You're Feeling Blue",
       image: require("../../image/blue.png"),
+      onPress: () => setModalVisible(true),
     },
     {
       key: "TalkToTherapist",
@@ -36,23 +46,31 @@ const ForMe = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-      <View style={styles.container}>
-        <Text style={styles.header}>For Me</Text>
-        {options.map((option) => (
-          <TouchableOpacity
-            key={option.key}
-            style={styles.option}
-            onPress={() => navigateToScreen(option.key)}
-          >
-            <Image source={option.image} style={styles.image} />
-            <Text style={styles.optionText}>{option.title}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-    </ScrollView>
+    <View style={styles.container}>
+      <Text style={styles.header}>For Me</Text>
+      {options.map((option) => (
+        <TouchableOpacity
+          key={option.key}
+          style={styles.option}
+          onPress={option.onPress}
+        >
+          <Image source={option.image} style={styles.image} />
+          <Text style={styles.optionText}>{option.title}</Text>
+        </TouchableOpacity>
+      ))}
+
+      <CustomModal
+        visible={modalVisible}
+        onYesPress={() => {
+          setModalVisible(false); // Close the modal
+          setNavigateToMessageSent(true); // Set the navigation trigger
+        }}
+        onNoPress={() => setModalVisible(false)}
+      />
+    </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -79,6 +97,11 @@ const styles = StyleSheet.create({
   optionText: {
     fontSize: 18,
     marginTop: 10,
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   image: {
     width: 180,

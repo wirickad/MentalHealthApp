@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  ScrollView,
   View,
   Text,
   StyleSheet,
@@ -35,7 +34,6 @@ const GetHelp = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
         {navOptions.map((option) => (
           <TouchableOpacity
@@ -48,7 +46,6 @@ const GetHelp = () => {
           </TouchableOpacity>
         ))}
       </View>
-    </ScrollView>
   );
 };
 
