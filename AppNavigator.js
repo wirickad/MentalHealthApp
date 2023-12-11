@@ -23,7 +23,6 @@ import MoreSeriousConcerns from "./screens/Wellness/NeedingHelp/MoreSeriousConce
 import TalkToTherapist from "./screens/Get Help/TalkToTherapist";
 import AccountSettings from "./screens/More/AccountSettings";
 import FAQ from "./screens/More/FAQ";
-//import ForMyCompanion from './screens/Emergency/ForMyCompanion';
 
 // Tab navigator
 const Tab = createBottomTabNavigator();

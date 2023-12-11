@@ -18,14 +18,6 @@ const GetHelp = () => {
       image: require("../image/sister.png"),
       navigateTo: "For Me",
     },
-    {
-      key: "forCompanion",
-      text: "For My Companion",
-      backgroundColor: "#EFEFEF",
-      image: require("../image/elders.png"),
-      navigateTo: "ForMyCompanion",
-    },
-    // Example option removed as per your request
   ];
 
   const navigateToScreen = (screenName) => {
