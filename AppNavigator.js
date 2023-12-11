@@ -7,7 +7,7 @@ import User from "./screens/User";
 import More from "./screens/More";
 import GetHelp from "./screens/GetHelp";
 import ForMe from "./screens/Get Help/ForMe";
-import MessageSentScreen from './screens/Get Help/MessageSentScreen';
+import MessageSentScreen from "./screens/Get Help/MessageSentScreen";
 import Settings from "./screens/More/Settings";
 import AlertContacts from "./screens/More/AlertContacts";
 import AdjustingLife from "./screens/Wellness/AdjustingLife";
@@ -90,7 +90,7 @@ const GetHelpStackNavigator = () => {
       <Stack.Screen
         name="TalkToTherapist"
         component={TalkToTherapist}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <Stack.Screen name="For Me" component={ForMe} />
       <Stack.Screen name="MessageSentScreen" component={MessageSentScreen} />

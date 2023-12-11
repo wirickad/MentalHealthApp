@@ -1,7 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Alert,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import CustomModal from '../../components/CustomModal';
+import CustomModal from "../../components/CustomModal";
 
 const ForMe = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -15,13 +22,13 @@ const ForMe = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (!modalVisible && navigateToMessageSent) {
-      // Navigate after the modal is closed
-      navigation.navigate('MessageSentScreen');
-      setNavigateToMessageSent(false); // Reset the navigation trigger
-    }
-  }, [modalVisible, navigateToMessageSent, navigation]);
+  // useEffect(() => {
+  //   if (!modalVisible && navigateToMessageSent) {
+  //     // Navigate after the modal is closed
+  //     navigation.navigate("MessageSentScreen");
+  //     setNavigateToMessageSent(false); // Reset the navigation trigger
+  //   }
+  // }, [modalVisible, navigateToMessageSent, navigation]);
 
   const options = [
     {
@@ -34,6 +41,7 @@ const ForMe = () => {
       key: "TalkToTherapist",
       title: "Talk to a Therapist",
       image: require("../../image/therapist.png"),
+
       onPress: () => navigateToScreen("TalkToTherapist"),
     },
   ];
@@ -41,6 +49,7 @@ const ForMe = () => {
   const navigateToScreen = (screenName) => {
     setModalVisible(false); // Close the modal
     setNavigateToMessageSent(true); // Set the navigation trigger
+    navigation.navigate(screenName);
     // The navigation logic will be handled in the useEffect
   };
 
@@ -97,9 +106,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   title: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   image: {
     width: 180,
