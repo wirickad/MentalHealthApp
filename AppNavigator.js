@@ -7,8 +7,9 @@ import User from "./screens/User";
 import More from "./screens/More";
 import GetHelp from "./screens/GetHelp";
 import ForMe from "./screens/Get Help/ForMe";
+import MessageSentScreen from "./screens/Get Help/MessageSentScreen";
 import Settings from "./screens/More/Settings";
-import NewContact from "./screens/More/NewContact";
+import AlertContacts from "./screens/More/AlertContacts";
 import AdjustingLife from "./screens/Wellness/AdjustingLife";
 import DailyCheckIn from "./screens/Wellness/DailyCheckIn";
 import NeedingHelp from "./screens/Wellness/NeedingHelp";
@@ -20,7 +21,8 @@ import SocialConcerns from "./screens/Wellness/NeedingHelp/SocialConcerns";
 import SpiritualConcerns from "./screens/Wellness/NeedingHelp/SpiritualConcerns";
 import MoreSeriousConcerns from "./screens/Wellness/NeedingHelp/MoreSeriousConcerns";
 import TalkToTherapist from "./screens/Get Help/TalkToTherapist";
-//import ForMyCompanion from './screens/Emergency/ForMyCompanion';
+import AccountSettings from "./screens/More/AccountSettings";
+import FAQ from "./screens/More/FAQ";
 
 // Tab navigator
 const Tab = createBottomTabNavigator();
@@ -86,12 +88,12 @@ const GetHelpStackNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="TalkToTherapist"
+        name="Talk To Therapist"
         component={TalkToTherapist}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <Stack.Screen name="For Me" component={ForMe} />
-      {/* <Stack.Screen name="ForMyCompanion" component={ForMyCompanion} /> */}
+      <Stack.Screen name="MessageSentScreen" component={MessageSentScreen} />
     </Stack.Navigator>
   );
 };
@@ -108,7 +110,9 @@ const MoreStackNavigator = () => {
         options={{ headerShown: false }}
       />
       <MoreStack.Screen name="Settings" component={Settings} />
-      <MoreStack.Screen name="New Contact" component={NewContact} />
+      <MoreStack.Screen name="FAQ" component={FAQ} />
+      <MoreStack.Screen name="Alert Loved Ones" component={AlertContacts} />
+      <MoreStack.Screen name="Account Settings" component={AccountSettings} />
     </MoreStack.Navigator>
   );
 };

@@ -6,12 +6,20 @@ const Settings = () => {
   const navigation = useNavigation();
   const navOptions = [
     {
-      key: "newContact",
-      text: "Emergency Contact",
+      key: "accountSettings",
+      text: "Account Settings",
       backgroundColor: "#EFEFEF",
-      title: "Emergency Contact",
+      title: "Account Settings",
+      image: require("../..//image/accountSettings.png"),
+      navigateTo: "Account Settings",
+    },
+    {
+      key: "alertContacts",
+      text: "Alert Loved Ones",
+      backgroundColor: "#EFEFEF",
+      title: "Alert Loved Ones",
       image: require("../..//image/emergencycontact.png"),
-      navigateTo: "New Contact",
+      navigateTo: "Alert Loved Ones",
     },
   ];
 

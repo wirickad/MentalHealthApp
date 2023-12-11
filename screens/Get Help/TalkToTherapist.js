@@ -102,6 +102,7 @@ const VirtualTherapistScreen = () => {
           placeholder="Type your message..."
           value={inputMessage}
           onChangeText={(text) => setInputMessage(text)}
+          onSubmitEditing={handleSendMessage}
         />
         <TouchableOpacity style={styles.sendButton} onPress={handleSendMessage}>
           <Text style={styles.sendButtonText}>Send</Text>
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
     paddingVertical: 0,
   },
   messageContainer: {
-    maxWidth: "50%",
+    maxWidth: "80%",
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,

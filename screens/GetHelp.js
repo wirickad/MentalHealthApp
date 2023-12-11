@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  ScrollView,
   View,
   Text,
   StyleSheet,
@@ -19,14 +18,6 @@ const GetHelp = () => {
       image: require("../image/sister.png"),
       navigateTo: "For Me",
     },
-    {
-      key: "forCompanion",
-      text: "For My Companion",
-      backgroundColor: "#EFEFEF",
-      image: require("../image/elders.png"),
-      navigateTo: "ForMyCompanion",
-    },
-    // Example option removed as per your request
   ];
 
   const navigateToScreen = (screenName) => {
@@ -35,7 +26,6 @@ const GetHelp = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
         {navOptions.map((option) => (
           <TouchableOpacity
@@ -48,7 +38,6 @@ const GetHelp = () => {
           </TouchableOpacity>
         ))}
       </View>
-    </ScrollView>
   );
 };
 

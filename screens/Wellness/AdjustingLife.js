@@ -21,32 +21,32 @@ const AdjustingLife = () => {
       <Text style={styles.title}>Adjusting to Missionary Life:</Text>
       <Text style={styles.subText}>
         Life as a missionary is not easy. The Church has provided 
-        "Adjusting to Missionary Life" as a resource. What's included in the Gospel Library resource?
+        "Adjusting to Missionary Life" as a resource. What's included in this Gospel Library resource?
       </Text>
 
       <View style={styles.row}>
         <View style={styles.bulletPoints}>
-          <Text style={styles.bullet}>{"\u2022"}</Text>
-          <Text style={styles.subText}>Physical Resources</Text>
+          <Text style={styles.bullet}>•</Text>
+          <Text style={styles.subText}>Physical Guidance</Text>
         </View>
         <View style={styles.bulletPoints}>
-          <Text style={styles.bullet}>{"\u2022"}</Text>
-          <Text style={styles.subText}>Emotional Resources</Text>
+          <Text style={styles.bullet}>•</Text>
+          <Text style={styles.subText}>Emotional Guidance</Text>
         </View>
       </View>
 
       <View style={styles.row}>
         <View style={styles.bulletPoints}>
-          <Text style={styles.bullet}>{"\u2022"}</Text>
-          <Text style={styles.subText}>Spiritual Resources</Text>
+          <Text style={styles.bullet}>•</Text>
+          <Text style={styles.subText}>Spiritual Guidance</Text>
         </View>
         <View style={styles.bulletPoints}>
-          <Text style={styles.bullet}>{"\u2022"}</Text>
-          <Text style={styles.subText}>Intellectual Resources</Text>
+          <Text style={styles.bullet}>•</Text>
+          <Text style={styles.subText}>Intellectual Guidance</Text>
         </View>
         <View style={styles.bulletPoints}>
-          <Text style={styles.bullet}>{"\u2022"}</Text>
-          <Text style={styles.subText}>Social Resources</Text>
+          <Text style={styles.bullet}>•</Text>
+          <Text style={styles.subText}>Social Guidance</Text>
         </View>
       </View>
 
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginLeft: 16, // Adjust the margin as needed
+    marginBottom: 8, // Add some margin at the bottom
   },
   row: {
     flexDirection: "row",
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   bullet: {
-    fontSize: 16,
+    fontSize: 20,
     color: "black", // Adjust the color as needed
     marginRight: 8, // Adjust the margin as needed
   },

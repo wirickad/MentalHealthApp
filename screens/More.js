@@ -21,11 +21,12 @@ const More = () => {
       navigateTo: "Settings",
     },
     {
-      key: "help",
-      text: "Help",
+      key: "faq",
+      text: "FAQ",
       backgroundColor: "#EFEFEF",
-      title: "Help",
+      title: "FAQ",
       image: require("../image/needhelp.png"),
+      navigateTo: "FAQ",
     },
   ];
 
@@ -35,7 +36,6 @@ const More = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
         {navOptions.map((option) => (
           <TouchableOpacity
@@ -48,7 +48,6 @@ const More = () => {
           </TouchableOpacity>
         ))}
       </View>
-    </ScrollView>
   );
 };
 
